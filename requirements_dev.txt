@@ -1,0 +1,14 @@
+uvicorn==0.17.0
+fastapi==0.72.0
+pydantic==1.8.2
+SQLAlchemy==1.4.35
+alembic==1.7.7
+psycopg2-binary==2.9.3
+python-dotenv==0.19.1
+pytest==7.1.2
+pytest-cov==3.0.0
+requests==2.27.1
+SQLAlchemy-Utils==0.38.2
+black==22.3.0
+flake8==4.0.1
+isort==5.10.1

@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    volumes:
+      - ./:/code
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOST: db
+
+  db:
+    image: postgres:latest
+    container_name: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: cars
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_HOST: db
